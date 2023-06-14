@@ -1,10 +1,13 @@
-function Book(title, author, series, info, read) {
-  this.title = title;
-  this.author = author;
-  this.series = series;
-  this.info = info;
-  this.read = read;
+class Book {
+  constructor(title, author, series, info, read) {
+    this.title = title;
+    this.author = author;
+    this.series = series;
+    this.info = info;
+    this.read = read;
+  }
 }
+
 
 let myLibrary = [];
 
@@ -41,7 +44,6 @@ function addBookToLibrary() {
   form.style.display = 'none';
   showFormButton.style.display = 'inline-block';
 }
-
 
 const populateDOM = (array) => {
   array.forEach((book) => {
@@ -88,14 +90,13 @@ const populateDOM = (array) => {
     // change read status
     const readButton = document.createElement('button');
     readButton.classList.add('btn');
-    readButton.textContent = 'Read?'
+    readButton.textContent = 'Read?';
     readButton.addEventListener('click', () => {
-        book.read = !book.read;
-        readStatus.textContent = `${book.read ? 'Read: ✔' : 'Read: ❌'}`
-        console.log(book);
-    })
+      book.read = !book.read;
+      readStatus.textContent = `${book.read ? 'Read: ✔' : 'Read: ❌'}`;
+      console.log(book);
+    });
     optionsContainer.appendChild(readButton);
-
   });
 };
 
@@ -105,5 +106,3 @@ const removeBookFromLibrary = (book) => {
     myLibrary.splice(bookIndex, 1);
   }
 };
-
-
