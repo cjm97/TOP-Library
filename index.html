@@ -19,11 +19,11 @@
             <label for="book__title">Title:</label>
             <input type="text" placeholder="The Fellowship of the Ring" name="book__title" required>
             <label for="book__author">Author:</label>
-            <input type="text" placeholder="J.R.R. Tolkien" name="book__author">
+            <input type="text" placeholder="J.R.R. Tolkien" name="book__author" required>
             <label for="book__series">Series:</label>
             <input type="text" placeholder="The Lord of The Rings" name="book__series">
             <label for="book__info">Info:</label>
-            <textarea name="book__info" id="" cols="30" rows="10" required></textarea>
+            <textarea name="book__info" id="book__info" cols="30" rows="10" required minlength="25" maxlength="200"></textarea>
             <div class="book__read-status--container">
                 <label for="book__read-status" class="book__read-status">Read: </label>
                 <input type="checkbox" name="book__read-status" class="book__read-status">
