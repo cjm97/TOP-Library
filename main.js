@@ -8,7 +8,6 @@ class Book {
   }
 }
 
-
 let myLibrary = [];
 
 const container = document.querySelector('.container');
@@ -106,3 +105,23 @@ const removeBookFromLibrary = (book) => {
     myLibrary.splice(bookIndex, 1);
   }
 };
+
+//form
+
+const bookReview = document.getElementById('book__info');
+
+bookReview.addEventListener('input', (event) => {
+  if (bookReview.validity.tooShort) {
+    bookReview.setCustomValidity(
+      `This information container is expecting a minimum of 20 characters! You have typed ${event.target.value.length} characters.`
+    );
+  } else if (bookReview.validity.tooLong) {
+    bookReview.setCustomValidity(
+      `This information container is expecting a maximum of 200 characters. You have typed ${
+        event.target.value.length
+      } characters. You are over by ${event.target.value.length - 200}`
+    );
+  } else {
+    bookReview.setCustomValidity('');
+  }
+});
